@@ -119,3 +119,7 @@ git stash drop → delete a stash item and remove the last entry of queue
     for giving the lable of the stash
 
 13. git commit --amend --> this command add the data and changes on list commit we dont need to create the new commit for any changes we can do this
+
+# Branch
+
+Head --> head tell like what branch u are working on and what is the current commit
