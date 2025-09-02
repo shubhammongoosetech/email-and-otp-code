@@ -151,5 +151,83 @@ Date: Tue Sep 2 12:32:16 2025 +0530
     git merge --no-ff branch-name Always create a merge commit (even if fast-forward possible)
     git log --graph --oneline --all Visualize merges
 
-16.
-17.
+# Perfect 👍 I understand now:
+
+You had two branches → main and feature-login (example).
+
+You merged feature-login into main.
+
+Now you want to remove that merge from main and make main look like it was before the merge.
+
+This is a very common situation in real projects. Let’s go step by step 🚀
+
+🔹 Option 1: Undo the Merge (Go back to before merge)
+
+If you want to completely undo the merge commit:
+
+Step 1: Find commit before merge
+git log --oneline
+
+Example:
+
+abc123 (HEAD -> main) Merge branch 'feature-login'
+789456 Added bug fix
+456789 Initial commit
+
+Here, abc123 is the merge commit, and 789456 is the commit before merge.
+
+Step 2: Reset main back
+
+👉 If you want to remove the merge completely:
+
+git reset --hard 789456
+
+Now main is exactly as it was before merging.
+
+👉 If you already pushed to GitHub:
+
+git push origin main --force
+
+⚠️ Warning: Force push rewrites history. Safe only if you are working alone (or your team agrees).
+
+🔹 Option 2: Revert the Merge (Safer for Teams)
+
+Instead of deleting history, you can revert the merge commit.
+This way, git log still shows the merge happened, but its changes are undone.
+
+Step 1: Find merge commit ID
+git log --oneline
+
+Example:
+
+abc123 (HEAD -> main) Merge branch 'feature-login'
+
+Step 2: Revert merge
+git revert -m 1 abc123
+
+-m 1 means keep the main branch as the parent.
+
+This creates a new commit that undoes all the changes from the merge.
+
+Step 3: Push to remote
+git push origin main
+
+Now the merge code is removed, but history is clean (no force push needed).
+
+🔹 Which One Should You Use?
+
+Working alone (personal project) → git reset --hard + force push is fine.
+
+Working with team (shared repo) → git revert -m 1 <merge-commit> (safer, keeps history).
+
+✅ Summary:
+
+To completely erase the merge → git reset --hard <commit-before-merge>
+
+To undo merge but keep history safe → git revert -m 1 <merge-commit>
+
+👉 Do you want me to make a step-by-step demo with real commit history diagram showing how reset vs revert will look in Git log? That will make it crystal clear.
+
+# git reset --hard 789456 --> so it move the code on that particular commit id amd we got the all code base based on that commit id
+
+# git revert -m 1 abc123 --> -m 1 means keep the main branch as the parent and This all the changes from the merge.
