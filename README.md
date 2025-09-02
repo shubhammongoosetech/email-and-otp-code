@@ -146,3 +146,7 @@ Date: Tue Sep 2 12:32:16 2025 +0530
   | Date: Tue Sep 2 12:32:16 2025 +0530
 
 15. if we create new commit so head going with the current branch either it is login branch and master and new_feature branch
+    git merge branch-name Merge given branch into current branch
+    git merge --abort Cancel ongoing merge
+    git merge --no-ff branch-name Always create a merge commit (even if fast-forward possible)
+    git log --graph --oneline --all Visualize merges
