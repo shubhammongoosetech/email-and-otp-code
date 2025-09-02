@@ -123,3 +123,26 @@ git stash drop → delete a stash item and remove the last entry of queue
 # Branch
 
 Head --> head tell like what branch u are working on and what is the current commit
+commit 71fc128a72b72204da27c4b111c6cb3f6cf1c2f3 (HEAD -> new_feture) here head pointing to current branch which is new_feature
+Author: shubhammongoosetech <shubhammahatma.mongoosetech@gmail.com>
+Date: Tue Sep 2 13:36:19 2025 +0530
+
+    feat: update readme.md
+
+commit cac9caa6f15f323542aba1cd45aa2445068772e8 (master) this commit done by this branch is master
+Author: shubhammongoosetech <shubhammahatma.mongoosetech@gmail.com>
+Date: Tue Sep 2 12:32:16 2025 +0530
+
+13. if we do commit and just after create the branch so now head pointing to the new branch
+14. commit 71fc128a72b72204da27c4b111c6cb3f6cf1c2f3 (HEAD -> login, new_feture)
+    | Author: shubhammongoosetech <shubhammahatma.mongoosetech@gmail.com>
+    | Date: Tue Sep 2 13:36:19 2025 +0530
+    |
+    | feat: update readme.md
+    |
+
+- commit cac9caa6f15f323542aba1cd45aa2445068772e8 (master)
+  | Author: shubhammongoosetech <shubhammahatma.mongoosetech@gmail.com>
+  | Date: Tue Sep 2 12:32:16 2025 +0530
+
+15. if we create new commit so head going with the current branch either it is login branch and master and new_feature branch
