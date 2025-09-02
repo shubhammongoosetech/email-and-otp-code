@@ -150,3 +150,6 @@ Date: Tue Sep 2 12:32:16 2025 +0530
     git merge --abort Cancel ongoing merge
     git merge --no-ff branch-name Always create a merge commit (even if fast-forward possible)
     git log --graph --oneline --all Visualize merges
+
+16.
+17.
